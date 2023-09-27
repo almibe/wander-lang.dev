@@ -1,41 +1,171 @@
-# Wander
-
-Wander is a scripting language for working with knowledge graphs in Ligature.
-Wander tries to combine ideas from modern general purpose languages,
-while focusing just on what's needed for working with knowledge graphs instead of being a general purpose language.
+---
+layout: ../../layouts/Docs.astro
+title: Wander Documentation
+tags: documentation
+---
 
 ## Status
 
 Work on Wander is still in early days.
-Expect changes and some differences between this document and implementations for the time being.
+Expect drastic changes still and some differences between this document and implementations for the time being.
+That said a working prototype is available for use.
 
-## Goals of Wander
+## History
 
- - be a small and easy to learn language for most people with any scripting background
- - make heavy use of streams (no manual loops), expressions, and pattern matching to solve problems
- - support immutability and functional concepts while not worrying about be purely functional
- - provide a variety of options for handling the output of a script (tables, json, csv, visualizations)
- - be easy to implement and understand
+Wander began life named Stroll (I like the new name a lot better) and was developed as part of [Ligature](https://ligature.dev), a knowledge graph project.
+The goal of Wander was to be a simple scripting language that focused on the domain of knowledge graphs.
+One aspect of this goal was that Wander was not planning on supporting user defined types like many programming languages,
+and instead build off of using graphs to represent data structures needed by programs.
+While I still think that's a cool idea, going down that path lead to frustration with needing to constantly add new types at the language level.
+Add to this the fact that I had a couple of other ideas for projects that could use an embedded scripting language and here we are.
+Wander is now a separate project although Ligature is still a user of Wander and when I'm writing this still in the same repository.
 
-## Literal Types
+## Core Concepts
 
- * Integer - a signed 64-bit integer (Java's long or Rust's i64)
-  * 1
-  * -20
- * String - a UTF-8 string, that follows the definition of a JSON string
-  * "Hello"
-  * "Hello\tWorld"
- * Byte Array - an array of bytes
-  * 0xff
-  * 0x12
-  * 0x48ef120a59
- * Identifier - Identifiers are wrapped in angle braces, just like lig
-  * <hello>
-  * <https://ligature.dev>
- * Boolean
- * Lambdas
- * Sequences/Streams
- * Records
+Values, names, expressions, let bindings, lambdas, partial application, 
+Namespaces, open, scopes, conditionals, pattern matcing, records,
+token transformers
+
+## Values
+
+Wander currently supports the following value types
+
+ - Int
+ - Bool
+ - String
+ - Nothing
+ - List
+ - Tuple
+ - Record
+ - Lambda
+ - HostFunction
+ - HostValue
+ - PartialApplication
+
+Values play a very important role in Wander.
+Below we'll breifly go over each type.
+
+## Basic Literals
+
+Wander supports several types of literals.
+Literals are simply expressions that evaluate to themselves.
+Below are some of the basic literals supported by Wander.
+Collection and Lambda types also have literals, but we'll cover those separately.
+
+### Integers
+
+Integers in Wander are 64 bit signed intergers similar to Java's long or Rust's i64.
+
+```wander
+1
+0
+-132980984
+24242342
+```
+
+### Strings
+
+Strings in Wander are encoded with UTF-8 and follow the syntax of JSON strings.
+
+```
+"Hello"
+"Hello\n\tWorld"
+```
+
+### Byte Arrays
+
+```
+0xFF
+0x12
+0x48EF120A59
+```
+
+### Bool
+
+```
+true
+false
+```
+
+### Nothing
+
+Nothing is Wander's version of None.
+
+```
+nothing
+```
+
+## Comments
+
+Comments in Wander are demarked by `--` and always continue until the end of the line.
+
+```
+--this is a comment
+-------------------------------
+true -- this is the value true
+24 -- this is the number 24
+```
+
+## Names & Let Bindings
+
+## Names
+
+Names in Wander are used for variable names in scripts.
+Variable names in Wander are used for local variables, top level variables, parameters, and function names.
+A valid identifier starts with a-z, A-Z, or _ and then includes zero of more characters from the same set or numbers.
+
+```regex
+[a-zA-Z_][a-zA-Z0-9_]*
+```
+
+Names in Wander reference values.
+Wander uses the let keyword to bind a value to a variable name.
+All bindings are immutable but the same name can be shadowed in the same scope with another let binding.
+
+```
+let five = 5      -- five refers to the Int 5
+let six = 6
+let five = "five" -- five refers to the String "five"
+let five = six    -- five refers to the Int 6
+```
+
+## Lambdas
+
+Lambdas are function literals.
+They can be bound to names or treated like any other value.
+The main different is that lambdas are able to be called.
+
+```
+let id = {x -> x}  -- define id to be a lambda that takes a single value and returns that value
+id(5)              -- call the lambda with the value 5
+```
+
+## Array
+
+```
+let threeNumbers = [1 2 3]
+```
+
+## Tuples
+
+```
+let triple = (23 false "hello")
+```
+
+## Records
+
+```
+let author = (lastName: 'Vonnegut' birthYear: 1922)
+assertEq(author.lastName 'Vonnegut')
+```
+
+## Enums
+
+Enums are WIP
+
+```
+enum Pet = Dog | Cat | Ferret | Turtle
+```
 
 ## Keywords
 
@@ -52,17 +182,6 @@ This list is likely to change but here is the current list of keywords.
  * when
  * schema
  * enum
- * trait
-
-## Names
-
-Names in Wander are used for variable names in scripts.
-Variable names in Wander are used for local variables, top level variables, parameters, and function names.
-A valid identifier starts with a-z, A-Z, or _ and then includes zero of more characters from the same set or numbers.
-
-```regex
-[a-zA-Z_][a-zA-Z0-9_]*
-```
 
 ## Results
 
