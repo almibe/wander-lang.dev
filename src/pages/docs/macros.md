@@ -1,3 +1,22 @@
+---
+layout: ../../layouts/Docs.astro
+title: Wander Documentation
+tags: documentation
+---
+
+# Macros
+
+## TOC
+
+ * [Introduction](/docs/)
+ * [Basic Types](/docs/basic-types/)
+ * [Complex Types](/docs/complex-types/)
+ * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
+ * [Lambdas and Functions](/docs/lambdas-and-functions/)
+ * Macros
+ * [Embedding with Rust](/docs/embedding-with-rust/)
+ * [Embedding with JavaScript](/docs/embedding-with-js/)
+
 ## A Note on Operators
 
 Currently, Wander doesn't really support operators.

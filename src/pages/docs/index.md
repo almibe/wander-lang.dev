@@ -4,6 +4,19 @@ title: Wander Documentation
 tags: documentation
 ---
 
+# Introduction
+
+## TOC
+
+ * Introduction
+ * [Basic Types](/docs/basic-types/)
+ * [Complex Types](/docs/complex-types/)
+ * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
+ * [Lambdas and Functions](/docs/lambdas-and-functions/)
+ * [Macros](/docs/macros/)
+ * [Embedding with Rust](/docs/embedding-with-rust/)
+ * [Embedding with JavaScript](/docs/embedding-with-js/)
+
 ## Status
 
 Work on Wander is still in early days.

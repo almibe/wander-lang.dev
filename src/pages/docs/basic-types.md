@@ -1,3 +1,22 @@
+---
+layout: ../../layouts/Docs.astro
+title: Wander Documentation
+tags: documentation
+---
+
+# Basic Types
+
+## TOC
+
+ * [Introduction](/docs/)
+ * Basic Types
+ * [Complex Types](/docs/complex-types/)
+ * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
+ * [Lambdas and Functions](/docs/lambdas-and-functions/)
+ * [Macros](/docs/macros/)
+ * [Embedding with Rust](/docs/embedding-with-rust/)
+ * [Embedding with JavaScript](/docs/embedding-with-js/)
+
 ## Values
 
 Wander currently supports the following value types

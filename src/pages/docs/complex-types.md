@@ -1,3 +1,22 @@
+---
+layout: ../../layouts/Docs.astro
+title: Wander Documentation
+tags: documentation
+---
+
+# Complex Types
+
+## TOC
+
+ * [Introduction](/docs/)
+ * [Basic Types](/docs/basic-types/)
+ * Complex Types
+ * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
+ * [Lambdas and Functions](/docs/lambdas-and-functions/)
+ * [Macros](/docs/macros/)
+ * [Embedding with Rust](/docs/embedding-with-rust/)
+ * [Embedding with JavaScript](/docs/embedding-with-js/)
+
 ## Sequences
 
 Sequences are similar to lists or vectors in other languages.

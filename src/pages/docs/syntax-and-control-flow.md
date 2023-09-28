@@ -1,3 +1,22 @@
+---
+layout: ../../layouts/Docs.astro
+title: Wander Documentation
+tags: documentation
+---
+
+# Syntax and Control Flow
+
+## TOC
+
+ * [Introduction](/docs/)
+ * [Basic Types](/docs/basic-types/)
+ * [Complex Types](/docs/complex-types/)
+ * Syntax and Control Flow
+ * [Lambdas and Functions](/docs/lambdas-and-functions/)
+ * [Macros](/docs/macros/)
+ * [Embedding with Rust](/docs/embedding-with-rust/)
+ * [Embedding with JavaScript](/docs/embedding-with-js/)
+
 ## Comments
 
 Comments in Wander are demarked by `--` and always continue until the end of the line.
