@@ -8,8 +8,8 @@
     src: url('font/Madefor-VariableFont_wght.ttf');
 }
 
-header {
-    font-size: larger;
+h1, h2, h3, h4, h5, h6 {
+    font-size: xx-large;
     font-family: 'LobsterTwo';
 }
 
