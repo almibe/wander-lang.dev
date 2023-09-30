@@ -6,34 +6,26 @@ tags: documentation
 
 # Complex Types
 
-## TOC
-
  * [Introduction](/docs/)
  * [Basic Types](/docs/basic-types/)
- * Complex Types
+ * *Complex Types*
  * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
  * [Lambdas and Functions](/docs/lambdas-and-functions/)
  * [Macros](/docs/macros/)
  * [Embedding with Rust](/docs/embedding-with-rust/)
  * [Embedding with JavaScript](/docs/embedding-with-js/)
 
-## Sequences
+## Arrays
 
-Sequences are similar to lists or vectors in other languages.
+Arrays are similar to lists or vectors in other languages.
 They are an ordered list of items of the same type.
 
 ```wander
 [1 2 3]            -- A Sequence of Integers
-[<a> <b> <c>]      -- A Sequence of Identifiers
 []                 -- An empty Sequence
 [[1] [] [45 -23]]  -- A Sequence of Sequences of Integers
 ```
 
-## Array
-
-```wander
-let threeNumbers = [1 2 3]
-```
 ## Tuples
 
 A tuple is an ordered collection of values.
@@ -51,11 +43,6 @@ This is different than sequences mentioned below which are homogenous, the entir
 (("a") 4 ((false ()))) -- more nested tuple schenanigans
 ```
 
-## Tuples
-
-```wander
-let triple = (23 false "hello")
-```
 ## Records
 
 Records are a data structure that holds key value pairs where the key is a string of characters defined by 
@@ -71,12 +58,6 @@ and a row named label that contains the string "You".
 
 ```wander
 let location = ( x: 1 y: 5 z: 10 color: 0xFFFFFF label: "You" )
--- location has the type Record(x::Int y::Int z::Int color::Bytes label::String)
-```
-
-## Records
-
-```wander
-let author = (lastName: 'Vonnegut' birthYear: 1922)
-assertEq(author.lastName 'Vonnegut')
+-- location has the type Record::(x::Int y::Int z::Int color::Bytes label::String)
+assertEq((1 5 10) (location.x location.y location.z))
 ```

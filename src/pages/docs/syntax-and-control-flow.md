@@ -6,16 +6,31 @@ tags: documentation
 
 # Syntax and Control Flow
 
-## TOC
-
  * [Introduction](/docs/)
  * [Basic Types](/docs/basic-types/)
  * [Complex Types](/docs/complex-types/)
- * Syntax and Control Flow
+ * *Syntax and Control Flow*
  * [Lambdas and Functions](/docs/lambdas-and-functions/)
  * [Macros](/docs/macros/)
  * [Embedding with Rust](/docs/embedding-with-rust/)
  * [Embedding with JavaScript](/docs/embedding-with-js/)
+
+## Keywords
+
+Ligature tries to have a minimal number of keywords.
+Keywords are names that users cannot use to define bindings.
+This list is likely to change but here is the current list of keywords.
+
+ * let
+ * if
+ * else
+ * true
+ * false
+ * nothing
+ * when
+ * schema
+ * enum
+
 
 ## Comments
 

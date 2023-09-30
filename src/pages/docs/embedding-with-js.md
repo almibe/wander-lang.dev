@@ -6,8 +6,6 @@ tags: documentation
 
 # Embedding with JavaScript
 
-## TOC
-
  * [Introduction](/docs/)
  * [Basic Types](/docs/basic-types/)
  * [Complex Types](/docs/complex-types/)
@@ -15,4 +13,5 @@ tags: documentation
  * [Lambdas and Functions](/docs/lambdas-and-functions/)
  * [Macros](/docs/macros/)
  * [Embedding with Rust](/docs/embedding-with-rust/)
- * Embedding with JavaScript
+ * *Embedding with JavaScript*
+

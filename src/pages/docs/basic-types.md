@@ -6,10 +6,8 @@ tags: documentation
 
 # Basic Types
 
-## TOC
-
  * [Introduction](/docs/)
- * Basic Types
+ * *Basic Types*
  * [Complex Types](/docs/complex-types/)
  * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
  * [Lambdas and Functions](/docs/lambdas-and-functions/)
@@ -19,7 +17,7 @@ tags: documentation
 
 ## Values
 
-Wander currently supports the following value types
+Wander currently supports the following types of values
 
  - Int
  - Bool
@@ -34,7 +32,7 @@ Wander currently supports the following value types
  - PartialApplication
 
 Values play a very important role in Wander.
-Below we'll breifly go over each type.
+In the following sections we'll breifly go over the basic literal types and go into more complex types throughout this documentation.
 
 ## Basic Literals
 
@@ -85,4 +83,3 @@ Nothing is Wander's version of None.
 ```wander
 nothing
 ```
-
