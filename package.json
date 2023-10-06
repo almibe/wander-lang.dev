@@ -12,6 +12,7 @@
   "dependencies": {
     "@wander-lang/wander-components": "github:almibe/wander-components",
     "astro": "^3.1.0",
+    "prismjs": "^1.29.0",
     "vite-plugin-top-level-await": "^1.3.1",
     "vite-plugin-wasm": "^3.2.2"
   }
