@@ -26,7 +26,6 @@ header {
     padding-bottom: 10px;
     border-spacing: 4px;
     border-bottom: 1px solid #FFFFFF;
-
 }
 
 header h1 {
@@ -65,4 +64,15 @@ main section {
 
 main h3 {
     margin-bottom: 0px;
+}
+
+section.alert {
+    margin-top:20px;
+    background-color: rgb(229, 162, 162);
+    border-radius: .5em;
+}
+
+section.alert * {
+    padding-left: 10px;
+    padding-right: 10px;
 }
