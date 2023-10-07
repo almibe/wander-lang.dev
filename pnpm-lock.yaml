@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@wander-lang/wander-components':
-    specifier: github:almibe/wander-components
-    version: github.com/almibe/wander-components/3c00d0a6fa22ee35e7e3fb864d74a29e62037e12(@lezer/common@1.1.0)
+    specifier: 0.1.0
+    version: 0.1.0(@lezer/common@1.1.0)
   astro:
     specifier: ^3.1.0
     version: 3.2.3
@@ -1069,6 +1069,19 @@ packages:
 
   /@types/unist@3.0.0:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: false
+
+  /@wander-lang/wander-components@0.1.0(@lezer/common@1.1.0):
+    resolution: {integrity: sha512-wMYO4W3Kr2qmGFRIDFaNNGzYEQPNGwBL/ZT7STkkoCF6dcMG+jjEr5J9Etg5+mZkiw21EXxmaDJ93E63ND62Sw==}
+    dependencies:
+      '@codemirror/commands': 6.3.0
+      '@codemirror/view': 6.21.3
+      '@wander-lang/wander': 0.3.2
+      codemirror: 6.0.1(@lezer/common@1.1.0)
+      highlight.js: 11.8.0
+      lit: 2.8.0
+    transitivePeerDependencies:
+      - '@lezer/common'
     dev: false
 
   /@wander-lang/wander@0.3.2:
@@ -3740,20 +3753,4 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-    dev: false
-
-  github.com/almibe/wander-components/3c00d0a6fa22ee35e7e3fb864d74a29e62037e12(@lezer/common@1.1.0):
-    resolution: {tarball: https://codeload.github.com/almibe/wander-components/tar.gz/3c00d0a6fa22ee35e7e3fb864d74a29e62037e12}
-    id: github.com/almibe/wander-components/3c00d0a6fa22ee35e7e3fb864d74a29e62037e12
-    name: '@wander-lang/wander-components'
-    version: 0.1.0
-    dependencies:
-      '@codemirror/commands': 6.3.0
-      '@codemirror/view': 6.21.3
-      '@wander-lang/wander': 0.3.2
-      codemirror: 6.0.1(@lezer/common@1.1.0)
-      lit: 2.8.0
-      prismjs: 1.29.0
-    transitivePeerDependencies:
-      - '@lezer/common'
     dev: false
