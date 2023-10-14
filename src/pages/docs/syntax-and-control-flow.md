@@ -17,36 +17,31 @@ tags: documentation
 
 ## Keywords
 
-Ligature tries to have a minimal number of keywords.
+Wander tries to have a minimal number of keywords.
 Keywords are names that users cannot use to define bindings.
 This list is likely to change but here is the current list of keywords.
 
  * let
+ * val
  * if
+ * then
  * else
  * true
  * false
  * nothing
  * when
- * schema
- * enum
-
 
 ## Comments
 
 Comments in Wander are demarked by `--` and always continue until the end of the line.
 
-```wander
+<wander-lang action="display">
 --this is a comment
 -------------------------------
 true -- this is the value true
 24 -- this is the number 24
-```
-## Comments
-
-Comments in Wander are marked by `--` and continue until the end of a line.
-
-`24601 -- what does this even mean?`
+24601 -- what does this even mean?
+</wander-lang>
 
 ## Names & Let Bindings
 
@@ -61,15 +56,20 @@ A valid identifier starts with a-z, A-Z, or _ and then includes zero of more cha
 ```
 
 Names in Wander reference values.
-Wander uses the let keyword to bind a value to a variable name.
+Wander uses the `val`` keyword to bind a value to a variable name.
 All bindings are immutable but the same name can be shadowed in the same scope with another let binding.
+`val` bindings are made within the context of a `let` scope.
 
-```wander
-let five = 5      -- five refers to the Int 5
-let six = 6
-let five = "five" -- five refers to the String "five"
-let five = six    -- five refers to the Int 6
-```
+<wander-lang action="display">
+let
+  val five = 5      -- five refers to the Int 5
+  val six = 6       -- six refers to 6
+  val five = "five" -- five refers to the String "five"
+  val five = six    -- five refers to the Int 6
+in
+  five -- this let scope evaluates to 6
+end
+</wander-lang>
 
 ## Let Expressions
 
