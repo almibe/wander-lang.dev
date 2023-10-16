@@ -2,18 +2,8 @@
 layout: ../../layouts/Docs.astro
 title: Wander Documentation
 tags: documentation
+order: -1
 ---
-
-# Introduction
-
- * *Introduction*
- * [Basic Types](/docs/basic-types/)
- * [Complex Types](/docs/complex-types/)
- * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
- * [Lambdas and Functions](/docs/lambdas-and-functions/)
- * [Macros](/docs/macros/)
- * [Embedding with Rust](/docs/embedding-with-rust/)
- * [Embedding with JavaScript](/docs/embedding-with-js/)
 
 ## Status
 

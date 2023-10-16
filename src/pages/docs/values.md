@@ -1,19 +1,76 @@
 ---
 layout: ../../layouts/Docs.astro
-title: Wander Documentation
+title: Values
 tags: documentation
+order: 1
 ---
 
-# Complex Types
+## Values
 
- * [Introduction](/docs/)
- * [Basic Types](/docs/basic-types/)
- * *Complex Types*
- * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
- * [Lambdas and Functions](/docs/lambdas-and-functions/)
- * [Macros](/docs/macros/)
- * [Embedding with Rust](/docs/embedding-with-rust/)
- * [Embedding with JavaScript](/docs/embedding-with-js/)
+Wander currently supports the following types of values
+
+ - Int
+ - Bool
+ - String
+ - Nothing
+ - List
+ - Tuple
+ - Record
+ - Lambda
+ - HostValue
+
+Values play a very important role in Wander.
+In the following sections we'll breifly go over the basic literal types and go into more complex types throughout this documentation.
+
+## Basic Literals
+
+Wander supports several types of literals.
+Literals are simply expressions that evaluate to themselves.
+Below are some of the basic literals supported by Wander.
+Collection and Lambda types also have literals, but we'll cover those separately.
+
+### Integers
+
+Integers in Wander are 64 bit signed intergers similar to Java's long or Rust's i64.
+
+<wander-lang action="display">
+1
+0
+-132980984
+24242342
+</wander-lang>
+
+### Strings
+
+Strings in Wander are encoded with UTF-8 and follow the syntax of JSON strings.
+
+<wander-lang action="display">
+"Hello"
+"Hello\n\tWorld"
+</wander-lang>
+
+### Byte Arrays
+
+<wander-lang action="display">
+0xFF
+0x12
+0x48EF120A59
+</wander-lang>
+
+### Bool
+
+<wander-lang action="display">
+true
+false
+</wander-lang>
+
+### Nothing
+
+Nothing is Wander's version of None.
+
+<wander-lang action="display">
+nothing
+</wander-lang>
 
 ## Arrays
 

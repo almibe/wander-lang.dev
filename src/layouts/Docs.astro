@@ -3,10 +3,12 @@ interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
+const props = Astro.props.frontmatter;
 import '../styles/wander.css';
 import 'highlight.js/styles/default.css';
 
+const docsPages = (await Astro.glob('../pages/docs/*.md')).filter(e => e.frontmatter.order != -1);
+console.log(docsPages.length);
 ---
 
 <!doctype html>
@@ -19,14 +21,23 @@ import 'highlight.js/styles/default.css';
 		<meta name="generator" content={Astro.generator} />
 		<script src="@wander-lang/wander-components/wander-lang.ts" /> 
 
-		<title>{title}</title>
+		<title>{props.title}  - Wander Documentation</title>
 	</head>
 	<body>
 		<header>
 			<h1><a href="/">Wander</a></h1>
-			<h2>Documentation</h2>
+			<h2>Embrace & Extend.</h2>
 		</header>
 		<main>
+			<h1>{props.title}</h1>
+			<section id="toc">
+				<ul>
+					<li><a href="/docs">Documentation Home</a></li>
+					{docsPages.sort((p1, p2) => { return p1.frontmatter.order - p2.frontmatter.order }).map((post) => {
+						return <li><a href={post.url}>{post.frontmatter.title}</a></li>
+					})}
+				</ul>
+			</section>
 			<section>
 				<slot />
 			</section>
