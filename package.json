@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
-    "@wander-lang/wander-components": "0.5.2",
+    "@wander-lang/wander-components": "0.5.3",
     "astro": "^3.1.0",
     "vite-plugin-top-level-await": "^1.3.1",
     "vite-plugin-wasm": "^3.2.2"
