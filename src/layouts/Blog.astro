@@ -6,7 +6,7 @@ interface Props {
 const props = Astro.props.frontmatter;
 import '../styles/wander.css';
 
-const docsPages = (await Astro.glob('../pages/docs/*.md')).filter(e => e.frontmatter.order != -1);
+const docsPages = (await Astro.glob('../pages/blog/*.md')).filter(e => e.frontmatter.date != -1);
 ---
 
 <!doctype html>
@@ -16,7 +16,7 @@ const docsPages = (await Astro.glob('../pages/docs/*.md')).filter(e => e.frontma
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<script src="@wander-lang/wander-components/wander-code.ts" /> 
+		<script src="@wander-lang/wander-components/wander-lang.ts" /> 
 
 		<title>{props.title}  - Wander Documentation</title>
 	</head>
@@ -25,25 +25,18 @@ const docsPages = (await Astro.glob('../pages/docs/*.md')).filter(e => e.frontma
 			<h1><a href="/">Wander,</a></h1>
 			<h2>programming in the smol</h2>
 		</header>
-		<nav id="toc">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/docs">Documentation Home</a></li>
-				{docsPages.sort((p1, p2) => { return p1.frontmatter.order - p2.frontmatter.order }).map((post) => {
-					return <li><a href={post.url}>{post.frontmatter.title}</a></li>
-				})}
-			</ul>
-		</nav>
 		<main>
+			<h1>{props.title}</h1>
+			<section id="toc">
+				<ul>
+					{docsPages.sort((p1, p2) => { return p1.frontmatter.order - p2.frontmatter.order }).map((post) => {
+						return <li><a href={post.url}>{post.frontmatter.title}</a></li>
+					})}
+				</ul>
+			</section>
 			<section>
 				<slot />
 			</section>
 		</main>
 	</body>
 </html>
-
-<style>
-	nav {
-		float: left;
-	}
-</style>
