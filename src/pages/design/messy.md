@@ -1,6 +1,6 @@
 ---
-layout: ../../layouts/Blog.astro
-title: Embedding in the Browser
+layout: ../../layouts/Page.astro
+title: Wander's Incomplete Messy Design Doc
 tags: documentation
 ---
 
