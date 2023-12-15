@@ -31,11 +31,8 @@ title: The Wander Programming Language
 		</ul>
 	</section>
 	<section class="links">
-		<h3>Learn More</h3>
+		<h3>External Links</h3>
 		<ul>
-			<li><a href="/docs">Documentation</a></li>
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/design/messy">Messy Design Documents</a></li>
 			<li><a href="https://github.com/almibe/ligature-fs/src/wander">F# Implementation Code Repository</a></li>
 			<li><a href="https://github.com/almibe/wander">Rust Implementation Code Repository</a></li>
 			<li><a href="https://github.com/almibe/ligature-scala/wander">Scala Implementation Code Repository</a></li>
