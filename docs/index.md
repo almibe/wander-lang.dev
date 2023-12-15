@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Docs.astro
+layout: Docs.mustache
 title: Wander Documentation
 tags: documentation
 order: -1

@@ -1,19 +1,9 @@
 ---
-layout: ../../layouts/Docs.astro
-title: Wander Documentation
+layout: Docs.mustache
+title: Macros
 tags: documentation
+order: 4
 ---
-
-# Macros
-
- * [Introduction](/docs/)
- * [Basic Types](/docs/basic-types/)
- * [Complex Types](/docs/complex-types/)
- * [Syntax and Control Flow](/docs/syntax-and-control-flow/)
- * [Lambdas and Functions](/docs/lambdas-and-functions/)
- * *Macros*
- * [Embedding with Rust](/docs/embedding-with-rust/)
- * [Embedding with JavaScript](/docs/embedding-with-js/)
 
 ## A Note on Operators
 
@@ -38,16 +28,16 @@ But the idea is that you normally won't do this but pass functions to other func
 
 Token Transforms allow an easy way to create data structures in Wander.
 
-```wander
+<wander-code>
 let g = graph`{
 
 }`
-```
+</wander-code>
 
 Behind the scenes a Token Transform calls a registered function after tokenizing input.
 
-```wander
+<wander-code>
 let g = graph([
   []
 ])
-```
+</wander-code>

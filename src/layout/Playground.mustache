@@ -14,10 +14,23 @@ import '../styles/wander.css';
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<script src="@wander-lang/wander-components/wander-code.ts" />
+		<script src="@wander-lang/wander-components/wander-editor.ts" /> 
+
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
-	</body>
+		<header>
+			<h1><a href="/">Wander</a></h1>
+			<h2>Playground</h2>
+		</header>
+		<main>
+			<section class="top">
+				<wander-editor results="#results"></wander-editor>
+			</section>
+			<section class="results">
+				<div id="results"></div>
+			</section>
+		</main>
+		<slot></slot>
+		</body>
 </html>

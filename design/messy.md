@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Page.astro
+layout: Page.mustache
 title: Wander's Incomplete Messy Design Doc
 tags: documentation
 ---

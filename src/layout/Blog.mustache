@@ -4,6 +4,7 @@ interface Props {
 }
 
 const props = Astro.props.frontmatter;
+import Nav from '../components/SideNav.ts';
 import '../styles/wander.css';
 
 const docsPages = (await Astro.glob('../pages/blog/*.md')).filter(e => e.frontmatter.date != -1);
@@ -17,7 +18,7 @@ const docsPages = (await Astro.glob('../pages/blog/*.md')).filter(e => e.frontma
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<title>{props.title}  - Wander Documentation</title>
+		<title>{props.title}</title>
 	</head>
 	<body>
 		<header>
@@ -34,6 +35,7 @@ const docsPages = (await Astro.glob('../pages/blog/*.md')).filter(e => e.frontma
 				</ul>
 			</section>
 			<section>
+				<Nav client:only="lit">Test</Nav>
 				<slot />
 			</section>
 		</main>

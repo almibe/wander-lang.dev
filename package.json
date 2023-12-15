@@ -3,17 +3,19 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.2",
+    "@shoelace-style/shoelace": "^2.12.0",
     "@wander-lang/wander-components": "0.5.3",
-    "astro": "^3.1.0",
+    "lit": "^3.1.0",
     "vite-plugin-top-level-await": "^1.3.1",
     "vite-plugin-wasm": "^3.2.2"
+  },
+  "devDependencies": {
+    "nail-clipper-screwdriver": "^0.4.0",
+    "vite": "^5.0.9"
   }
 }

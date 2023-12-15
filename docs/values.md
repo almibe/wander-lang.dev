@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Docs.astro
+layout: Docs.mustache
 title: Values
 tags: documentation
 order: 1
