@@ -17,6 +17,7 @@ Wander tries to have a limited number of keywords below is the current list.
 
 ```
 when
+end
 nothing
 true
 false
@@ -64,7 +65,7 @@ A UTF-8 String.
 Strings can support interpolation if you prefix the String with an `i`
 
 ```wander
-person = { name = "Emmie" }
+person = { name = "Emmie" },
 i"Hello, $(person.name)"
 ```
 
@@ -72,8 +73,8 @@ When interpolating a string use a `$` followed by `()` to include code.
 There's no way to escape the `$` so if you need to interpolate and print a dollar use `Core.dollar`
 
 ```wander
-dollars = 5
-cents = 24
+dollars = 5,
+cents = 24,
 i"$(Core.dollar)$(dollars).${cents}"
 ```
 
@@ -93,7 +94,7 @@ The `nothing` keyword represents the lack of a value.
 
 An array is simply an ordered list of elements.
 
-```
+```wander
 [1, 2, 3],
 [true, "hello", <24601>]
 ```
@@ -236,6 +237,6 @@ A Tag is a function that take a single parameter and returns true or false if th
 
 ```
 Five = \i -> Core.eq i 5,
-five: Five = 5 -- okay!
-six: Five = 6  -- error!
+five: Five = 5, -- okay!
+six: Five = 6   -- error!
 ```
