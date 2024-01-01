@@ -20,6 +20,8 @@ when
 nothing
 true
 false
+import
+export
 ```
 
 ## Comments
@@ -57,6 +59,24 @@ A UTF-8 String.
 "Heeeelo"
 ```
 
+#### Interpolation
+
+Strings can support interpolation if you prefix the String with an `i`
+
+```wander
+person = { name = "Emmie" }
+i"Hello, $(person.name)"
+```
+
+When interpolating a string use a `$` followed by `()` to include code.
+There's no way to escape the `$` so if you need to interpolate and print a dollar use `Core.dollar`
+
+```wander
+dollars = 5
+cents = 24
+i"$(Core.dollar)$(dollars).${cents}"
+```
+
 ### Bytes
 
 A bytes literal takes the form
@@ -66,16 +86,6 @@ A bytes literal takes the form
 ### nothing
 
 The `nothing` keyword represents the lack of a value.
-
-### Identifier
-
-An Identifier in Wander is a string of characters that is used as a reference for something else like a URL or database ID.
-
-```
-<24601>,
-<3f9e50df-4986-4e4c-b3ac-fe8152c4a50b>,
-<https://wander-lang.dev>
-```
 
 ## Complex Literals
 
@@ -92,8 +102,15 @@ An array is simply an ordered list of elements.
 
 A record is a collection of values that are accessable by a name.
 
-```
+```wander
 {oneMoreThanThirtyThree = 34, greeting = "Hello", id = \x -> x, website = <https://wander-lang.org>}
+```
+
+Records support a syntax shortcut if the field and variable name you are assigning to the field are the same.
+
+```wander
+x = 5,
+Core.eq { x = x } { x }
 ```
 
 ## Lambdas
@@ -119,6 +136,19 @@ y = Bool.and true,       -- y a function that takes a boolean and returns the sa
 y false                      -- returns false, no comma needed since it's the last line, but you can include it!
 ```
 
+### Calling Records and Arrays
+
+Both Records and Arrays can also be called in Wander.
+Arrays can accept a single Int as an index.
+Records can accept a single String as a field to access.
+
+```wander
+["hello", "world"] 1,                 -- "world"
+{ name = "Emmie", number = 5 } "name" -- "Emmie"
+```
+
+It is usually better to access record fields with a dot but this can help with programmatic access.
+
 ## Grouping
 
 You can use `()` to wrap multiple expressions into a single expression.
@@ -133,7 +163,6 @@ Bool.and true (Bool.not true)
 
 ```
 x = 5,
-y = <hello>,
 z = \x -> x
 ```
 
@@ -151,3 +180,28 @@ end
 
 I plan on adding another form of when expressions later that will perform pattern matching,
 but initally just the simple conditional when exists.
+
+## Importing and Exporting Names
+
+Wander has a very simple module system.
+A module has a name that can contain dots.
+
+`Html.Shoelace`
+
+How modules are defined is determined by the implementation.
+They could be on the file system, in memory, in a database, retrieved from the web, etc.
+
+Modules can export names using the `export` keyword.
+
+`export x = 5`
+
+Let's say that the previous code was in a module named Helper.
+Here is how you can import that name.
+
+```wander
+Helper.x,      -- access directly
+y = Helper.x,  -- alias, effectively import a single name
+import Helper, -- pull all names into this space
+x              -- 5
+```
+
