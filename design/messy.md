@@ -136,6 +136,28 @@ y = Bool.and true,       -- y a function that takes a boolean and returns the sa
 y false                      -- returns false, no comma needed since it's the last line, but you can include it!
 ```
 
+### Parial Application
+
+Wander support partially applying a function.
+
+```wander
+middle = \a b c -> b,
+first = middle nothing,
+first "hello" "world", -- "hello"
+```
+
+### Named Parameters with Records
+
+If the last parameter to a function is a Record,
+then you can write out values to be passed in as the record as named parameters.
+
+```wander
+numberThenRecord = \i r -> Core.todo,
+-- the following two calls are identical
+numberThenRecord 5 { hello = "World" name = "Jean" id = (\i -> i) },
+numberThenRecord 5 hello = "World" name = "Jean" id = (\i -> i),
+```
+
 ### Calling Records and Arrays
 
 Both Records and Arrays can also be called in Wander.
@@ -205,3 +227,15 @@ import Helper, -- pull all names into this space
 x              -- 5
 ```
 
+## Tags
+
+Tags are an experimental feature in Wander.
+It is inspired by Clojure's Spec library, RDF's SHACL, and Predicate Types.
+Right now it is limited to simple values but functions are planned to be supported soon.
+A Tag is a function that take a single parameter and returns true or false if the value conforms to that tag.
+
+```
+Five = \i -> Core.eq i 5,
+five: Five = 5 -- okay!
+six: Five = 6  -- error!
+```
