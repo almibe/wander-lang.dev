@@ -96,7 +96,7 @@ An array is simply an ordered list of elements.
 
 ```wander
 [1, 2, 3],
-[true, "hello", <24601>]
+[true, "hello", 24601]
 ```
 
 ### Record
@@ -104,7 +104,7 @@ An array is simply an ordered list of elements.
 A record is a collection of values that are accessable by a name.
 
 ```wander
-{oneMoreThanThirtyThree = 34, greeting = "Hello", id = \x -> x, website = <https://wander-lang.org>}
+{ oneMoreThanThirtyThree = 34, greeting = "Hello", id = \x -> x, website = "https://wander-lang.org" }
 ```
 
 Records support a syntax shortcut if the field and variable name you are assigning to the field are the same.
