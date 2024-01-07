@@ -18,11 +18,8 @@ Wander tries to have a limited number of keywords below is the current list.
 ```
 when
 end
-nothing
 true
 false
-import
-export
 ```
 
 ## Comments
@@ -84,34 +81,38 @@ A bytes literal takes the form
 
 `0xDEADCAFE`
 
-### nothing
+## Arrays
 
-The `nothing` keyword represents the lack of a value.
-
-## Complex Literals
-
-### Array
-
-An array is simply an ordered list of elements.
+An Array is simply an ordered list of elements.
 
 ```wander
 [1, 2, 3],
 [true, "hello", 24601]
 ```
 
-### Record
+## Modules
 
-A record is a collection of values that are accessable by a name.
+A Module is a collection of values that are accessable by a field name.
 
 ```wander
 { oneMoreThanThirtyThree = 34, greeting = "Hello", id = \x -> x, website = "https://wander-lang.org" }
 ```
 
-Records support a syntax shortcut if the field and variable name you are assigning to the field are the same.
+Modules support a syntax shortcut if the field and variable name you are assigning to the field are the same.
 
 ```wander
 x = 5,
 Core.eq { x = x } { x }
+```
+
+### Importing
+
+If you are using names from a module frequently you can pull the names from a module into the current scope by importing them.
+
+```
+X = { x = 5 },
+import X,
+Core.eq x X.x, -- true
 ```
 
 ## Lambdas
@@ -240,3 +241,15 @@ Five = \i -> Core.eq i 5,
 five: Five = 5, -- okay!
 six: Five = 6   -- error!
 ```
+
+## Tests
+
+TODO - Explain *.test.wander files.
+
+## Libraries
+
+TODO - Explain *.lib.wander files.
+
+## Notebooks
+
+TODO - Explain *.note.wander files.
