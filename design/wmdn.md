@@ -16,7 +16,7 @@ This means that things like checking equality or iterating aren't possible since
 ```
 x = 5,
 zool = true,
-let reverse first second = [second first]
+reverse first second = [second first],
 gamma = {
     beep = "boop",
     y = x,
