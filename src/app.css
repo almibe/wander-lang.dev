@@ -1,0 +1,51 @@
+body {
+  font-family: SourceCodePro, monospace;
+  height: 100%;
+}
+
+html, #app, main {
+  height: 100%;
+}
+
+#results {
+  font-family: SourceCodePro, monospace;
+  margin: 2em;
+}
+
+.status {
+  padding-left:.8em;
+  padding-top:.4em;
+}
+
+#split-panel {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 300px 10px 1fr;
+}
+
+.gutter {
+  grid-row: 1/-1;
+  cursor: col-resize;
+  grid-column: 2;
+}
+
+.gutter {
+  z-index:1;
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: col-resize;
+}
+
+#resource-panel {
+  z-index:0;
+}
+
+#content-panel {
+  z-index:1; 
+  background: #FFF
+}
