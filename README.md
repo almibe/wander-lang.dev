@@ -1,4 +1,4 @@
-# wander-land.dev
+# wander-lang.dev
 
 ```bash
 pnpm install
