@@ -1,4 +1,4 @@
-import { initializeEditor } from "@ligature/ligature-components/src/editor/LigatureEditor"
+<!-- import { initializeEditor } from "@ligature/ligature-components/src/editor/LigatureEditor"
 import { createSignal, Show, Switch, useContext } from "solid-js";
 import { StoreContext } from "../store/StoreProvider";
 import '@shoelace-style/shoelace/dist/components/input/input.js';
@@ -43,4 +43,10 @@ export default function AddTriples() {
             <sl-button>Save</sl-button>
         </div>
     </>;
-}
+} -->
+
+<script lang="ts">
+
+</script>
+
+<div>Add Triples -- TODO</div>
