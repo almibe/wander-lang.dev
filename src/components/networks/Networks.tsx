@@ -17,8 +17,8 @@ export function Networks() {
   return <div>
     {/* <sl-button id="addNetwork">+</sl-button> */}
     <sl-tree id="resourceTree">
-      <sl-tree-item selected value="section:README">README</sl-tree-item>
-      <sl-tree-item value="section:Wander">Wander</sl-tree-item>
+      <sl-tree-item selected value="section:README"><sl-icon src="/icons/file-earmark-text.svg"></sl-icon>README</sl-tree-item>
+      <sl-tree-item value="section:Wander"><sl-icon src="/icons/terminal.svg"></sl-icon>Wander</sl-tree-item>
       <For each={store.state.networks}>
         {(network, _index) => <sl-tree-item>{network}</sl-tree-item>}
       </For>

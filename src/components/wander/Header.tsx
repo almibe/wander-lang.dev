@@ -8,10 +8,6 @@ import '@shoelace-style/shoelace/dist/components/icon/icon.js';
 import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
 import '@shoelace-style/shoelace/dist/components/dialog/dialog.js';
 
-import playIcon from '../../lib/icons/play.svg';
-import questionIcon from '../../lib/icons/question.svg';
-import markdownIcon from '../../lib/icons/markdown.svg';
-
 import { useContext } from 'solid-js';
 import { StoreContext } from '../store/StoreProvider';
 import AddTriples from './AddTriples';
@@ -20,9 +16,9 @@ export default function Header() {
   const store = useContext(StoreContext);
   return <>
       <div id='header'>
-            <sl-icon-button src={playIcon} onclick={run}></sl-icon-button>
-            <sl-icon-button src={questionIcon} onclick={help}></sl-icon-button>
-            <sl-icon-button src={markdownIcon} onclick={markdownEditor}></sl-icon-button>
+            <sl-icon-button src="/icons/play.svg" onclick={run}></sl-icon-button>
+            <sl-icon-button src="/icons/question.svg" onclick={help}></sl-icon-button>
+            {/* <sl-icon-button src={markdownIcon} onclick={markdownEditor}></sl-icon-button> */}
             <select id="display" onChange={(e) => {
               const selected = e.currentTarget.value
               store.setSelected(selected)
