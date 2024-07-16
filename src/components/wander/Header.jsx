@@ -8,9 +8,10 @@ import '@shoelace-style/shoelace/dist/components/icon/icon.js';
 import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
 import '@shoelace-style/shoelace/dist/components/dialog/dialog.js';
 
-import { useContext } from 'solid-js';
+import { For, useContext } from 'solid-js';
 import { StoreContext } from '../store/StoreProvider';
 import AddTriples from './AddTriples';
+import { coreBindings } from '@ligature/ligature';
 
 export default function Header() {
   const store = useContext(StoreContext);
@@ -30,7 +31,21 @@ export default function Header() {
       </div>
 
       <sl-dialog label='Help' id='help-dialog' style='--width: 50vw;'>
-        <p>Help!</p>
+        <div>Functions</div>
+        <table>
+          <thead>
+            <tr>
+            <th>Name</th><th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+        <For each={JSON.parse(JSON.stringify(coreBindings)).Functions}>
+            {(item) => {
+              return <tr><td>{item.Name}</td><td>{item.Description}</td></tr>
+            }}
+        </For>
+        </tbody>
+        </table>
       </sl-dialog>
 
       <sl-dialog label='Markdown Editor' id='markdown-dialog'>
