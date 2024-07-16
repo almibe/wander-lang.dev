@@ -1,6 +1,5 @@
 import { createContext } from "solid-js";
 import { createStore } from "solid-js/store";
-import { runWander } from "../../lib/ligature-client";
 import JSON5 from 'json5'
 import { printResult } from '@ligature/ligature'
 
@@ -13,16 +12,16 @@ const [state, setState] = createStore({
 })
 export const StoreContext = createContext({
     state,
-    setBodyContent: (resultContent: string) => {
+    setBodyContent: (resultContent) => {
         setState({resultContent})
     },
-    setEditorContent: (editorContent: string) => {
+    setEditorContent: (editorContent) => {
         setState({editorContent})
     },
-    setSelectedResource: (selectedResource: any) => {
+    setSelectedResource: (selectedResource) => {
         setState({selectedResource})
     },
-    setSelected: (selected: any) => {
+    setSelected: (selected) => {
         setState({selected})
     },
     run: async () => {
@@ -31,15 +30,16 @@ export const StoreContext = createContext({
         setState({resultContent})
     },
     readNetworks: async () => {
-        const res = await runWander("networks ()")
-        const networks: string[] = JSON5.parse(res)
-        setState({networks})
+        throw "TODO"
+        // const res = await runWander("networks ()")
+        // const networks: string[] = JSON5.parse(res)
+        // setState({networks})
     },
-    addNetwork: async (networkName: string) => {
+    addNetwork: async (networkName) => {
         const networks = [networkName]
         setState({networks})
     },
-    removeNetwork: async (networkName: string) => {
+    removeNetwork: async (networkName) => {
         
     }
 });

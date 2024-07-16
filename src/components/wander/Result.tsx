@@ -35,10 +35,10 @@ export default function Result() {
     createEffect(() => {
       if (store.state.selected == "graph") {
         setTimeout(() => {
-          initializeGraph(document.querySelector("#resultGraph"), store.state.resultContent)
+          initializeGraph(document.querySelector("#resultGraph")!, store.state.resultContent)
         })
       } else if (store.state.selected == "table") {
-        initializeTable(document.querySelector("#resultTable"), store.state.resultContent)
+        initializeTable(document.querySelector("#resultTable")!, store.state.resultContent)
       }
     })
 

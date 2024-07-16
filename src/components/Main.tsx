@@ -9,7 +9,7 @@ export default function Main() {
     Split({
       columnGutters: [{
         track: 1,
-        element: document.querySelector('.gutter'),
+        element: document.querySelector('.gutter')!,
       }],
     })  
   })  

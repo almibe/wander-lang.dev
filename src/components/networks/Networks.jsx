@@ -10,7 +10,7 @@ export function Networks() {
   setTimeout(() => {
    const tree = document.querySelector("#resourceTree")
    tree?.addEventListener("sl-selection-change", e => {
-    const selection = (e.detail.selection[0] as HTMLElement).getAttribute("value")
+    const selection = (e.detail.selection[0]).getAttribute("value")
     store.setSelectedResource(selection)
   })})
 
